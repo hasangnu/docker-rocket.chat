@@ -27,7 +27,7 @@
        - 3000:3000
 
    mongo:
-     image: hasangnu/mongo
+     image: hasangnu/mongo:4
      container_name: rocketchat_mongo
      restart: unless-stopped
      command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
@@ -36,7 +36,7 @@
        - ./data/dump:/dump
 
    mongo-init-replica:
-     image: mongo:4.0
+     image: hasangnu/mongo:4
      container_name: rocketchat_mongo_init_replica
      command: >
        bash -c
