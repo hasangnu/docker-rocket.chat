@@ -3,7 +3,7 @@
 
  services:
    rocketchat:
-     image: hasangnu/rocket.chat:latest
+     image: hasangnu/rocket.chat
      container_name: rocketchat
      command: >
        bash -c
@@ -28,7 +28,7 @@
        - 3000:3000
 
    mongo:
-     image: mongo:4.0
+     image: hasangnu/mongo
      container_name: rocketchat_mongo
      restart: unless-stopped
      command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
@@ -55,5 +55,7 @@
 ```
 
 ```
+git clone https://github.com/hasangnu/docker-rocket.chat && cd docker-rocket.chat
+
 docker-compose up -d
 ```
