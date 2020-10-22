@@ -1,4 +1,4 @@
-````yalm
+```yalm
 version: '3.6'
 services:
   mongo:
